@@ -23,10 +23,8 @@
         android:text="@string/selCalendario"
         android:id="@+id/tvPromptCalendario" />
     <Spinner
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spCalendario"
-
          />
 </LinearLayout>

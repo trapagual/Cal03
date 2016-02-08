@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,8 +46,8 @@ public class SpinnerAdapter extends ArrayAdapter<CodigoValor> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         // I created a dynamic TextView here, but you can reference your own  custom layout for each spinner item
-        TextView label = new TextView(context);
-        label.setTextColor(Color.BLACK);
+        //TextView label = new TextView(context);
+        TextView label = (TextView) super.getView(position, convertView, parent);
         // Then you can get the current item using the values array (Users array) and the current position
         // You can NOW reference each method you has created in your bean object (User class)
         label.setText(valores.get(position).getValor());
@@ -59,8 +61,8 @@ public class SpinnerAdapter extends ArrayAdapter<CodigoValor> {
     @Override
     public View getDropDownView(int position, View convertView,
                                 ViewGroup parent) {
-        TextView label = new TextView(context);
-        label.setTextColor(Color.BLACK);
+        TextView label = (TextView) super.getView(position, convertView, parent);
+
         label.setText(valores.get(position).getValor());
 
         return label;

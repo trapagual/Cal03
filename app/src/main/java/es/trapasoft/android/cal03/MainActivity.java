@@ -3,6 +3,7 @@ package es.trapasoft.android.cal03;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.os.Build;
 import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -43,10 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
         listaCalendarios = rellenaListaCalendarios();
 
-        adapter = new SpinnerAdapter(this, android.R.layout.simple_spinner_dropdown_item, listaCalendarios);
+       // adapter = new SpinnerAdapter(this, android.R.layout.simple_spinner_dropdown_item, listaCalendarios);
+        adapter = new SpinnerAdapter(this, R.layout.spinner_una_linea, listaCalendarios);
+
         spCalendario = (Spinner) findViewById(R.id.spCalendario);
         spCalendario.setPrompt("Selecciona un calendario...");
         spCalendario.setAdapter(adapter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            spCalendario.setLayoutMode(Spinner.MODE_DIALOG);
+        }
         // You can create an anonymous listener to handle the event when is selected an spinner item
         spCalendario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

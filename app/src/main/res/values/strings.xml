@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Citas01</string>
+    <string name="hola">Hola App Bar</string>
+    <string name="mnu_config">Configuración</string>
+    <string name="usuario">Usando cuenta: trapagual@yahoo.es</string>
+    <string name="mnu_next">Siguiente</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selCalendario">Elige un calendario:</string>
+</resources>

@@ -10,12 +10,34 @@
 
     <include android:id="@+id/app_bar" layout="@layout/app_bar"/>
 
-    <TextView
-        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/usuario"
-        android:id="@+id/tvUsuario" />
+        >
+        <TextView
+            android:text="@string/usuario"
+            android:id="@+id/tvUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
+            android:hint="@string/hintUsuario"
+            />
+
+        <TextView
+            android:text="@string/calendario"
+            android:id="@+id/tvCalendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
+            android:hint="@string/hintCalendario"/>
+    </LinearLayout>
+
+    <!-- NO VOY A USAR EL SPINNER
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
@@ -26,5 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spCalendario"
+        android:spinnerMode="dialog"
          />
+    FIN NO VOY A USAR EL SPINNER -->
 </LinearLayout>

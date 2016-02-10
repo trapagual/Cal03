@@ -2,8 +2,11 @@
     <string name="app_name">Cal03</string>
     <string name="hola">Hola App Bar</string>
     <string name="mnu_config">Configuración</string>
-    <string name="usuario">Usando cuenta: trapagual@yahoo.es</string>
+    <string name="usuario">No hay cuenta</string>
     <string name="mnu_next">Siguiente</string>
 
     <string name="selCalendario">Elige un calendario:</string>
+    <string name="calendario">No hay calendario</string>
+    <string name="hintUsuario">Cuenta de Usuario</string>
+    <string name="hintCalendario">Calendario</string>
 </resources>

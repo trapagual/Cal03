@@ -10,4 +10,17 @@
         android:icon="@android:drawable/ic_media_play"
         android:title="@string/mnu_next"
         app:showAsAction="ifRoom"/>
+    <item android:id="@+id/mnu_cambiar_cuenta"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="@string/mnu_cambiar_cuenta"
+        app:showAsAction="never"/>
+    <item android:id="@+id/mnu_cambiar_calendario"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="@string/mnu_cambiar_calendario"
+        app:showAsAction="never"/>
+    <item android:id="@+id/mnu_borrar_preferencias"
+        android:icon="@android:drawable/ic_delete"
+        android:title="@string/mnu_borrar_preferencias"
+        app:showAsAction="never"/>
+
 </menu>

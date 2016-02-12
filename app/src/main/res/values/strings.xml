@@ -9,4 +9,7 @@
     <string name="calendario">No hay calendario</string>
     <string name="hintUsuario">Cuenta de Usuario</string>
     <string name="hintCalendario">Calendario</string>
+    <string name="mnu_cambiar_calendario">Cambiar Calendario</string>
+    <string name="mnu_cambiar_cuenta">Cambiar Cuenta</string>
+    <string name="mnu_borrar_preferencias">ELIMINAR preferencias</string>
 </resources>

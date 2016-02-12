@@ -89,7 +89,7 @@ public class DialogoSelCalendario extends DialogFragment {
     public void onCancel(DialogInterface dialog) {
         super.onCancel(dialog);
         //on pressing back button or touching screen outside dialog
-        Toast.makeText(getActivity(), "Diálogo de Selección cancelado", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "Diálogo de Selección cancelado", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
 
@@ -106,7 +106,7 @@ public class DialogoSelCalendario extends DialogFragment {
         // creamos un dialogo Alert normal
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // lo personalizamos con los datos que tenemos
-        builder.setTitle("Elige una cuenta")
+        builder.setTitle("Elige un calendario")
                 .setSingleChoiceItems(opciones, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -1,7 +1,9 @@
 package es.trapasoft.android.cal03.modelo;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Administrador on 07/02/2016.
@@ -16,8 +18,12 @@ public class Cita {
     private int hHoraFin;
     private int hMinutoInicio;
     private int hMinutoFin;
+    private Date fhInicio;
+    private Date fhFin;
+
 
     private int idDespacho;
+    private String nombreDespacho;
     private String observaciones;
     private Double tarifa;
     private boolean facturar;
@@ -30,7 +36,15 @@ public class Cita {
                 '}';
     }
 
+    // CONSTRUCTORES
     public Cita() {
+    }
+
+    public Cita(String nombrePaciente, Date fhInicio, Date fhFin, String observaciones) {
+        this.nombrePaciente = nombrePaciente;
+        this.fhInicio = fhInicio;
+        this.fhFin = fhFin;
+        this.observaciones = observaciones;
     }
 
     public Cita(int idPaciente, String nombrePaciente, int fAnio, int fMes, int fDia, int hHoraInicio, int hHoraFin, int hMinutoInicio, int hMinutoFin, int idDespacho, String observaciones, Double tarifa, boolean facturar) {
@@ -47,6 +61,47 @@ public class Cita {
         this.observaciones = observaciones;
         this.tarifa = tarifa;
         this.facturar = facturar;
+    }
+
+    // GETTERS - SETTERS
+    public String getNombreDespacho() {
+        return nombreDespacho;
+    }
+
+    public void setNombreDespacho(String nombreDespacho) {
+        this.nombreDespacho = nombreDespacho;
+    }
+
+    public Date getFhInicio() {
+        return fhInicio;
+    }
+
+    // al cargar una fecha como DATE, inicializar los campos individuales
+    public void setFhInicio(Date fhInicio) {
+        this.fhInicio = fhInicio;
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(fhInicio);
+        this.fDia = cal.DAY_OF_MONTH;
+        this.fMes = cal.MONTH;
+        this.fAnio = cal.YEAR;
+        this.hHoraInicio = cal.HOUR_OF_DAY;
+        this.hMinutoInicio = cal.MINUTE;
+
+    }
+
+    public Date getFhFin() {
+        return fhFin;
+    }
+
+    public void setFhFin(Date fhFin) {
+        this.fhFin = fhFin;
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(fhInicio);
+        this.fDia = cal.DAY_OF_MONTH;
+        this.fMes = cal.MONTH;
+        this.fAnio = cal.YEAR;
+        this.hHoraFin = cal.HOUR_OF_DAY;
+        this.hMinutoFin = cal.MINUTE;
     }
 
     public int getIdPaciente() {
@@ -178,6 +233,16 @@ public class Cita {
 
     public String getfHoraFin() {
         return String.format("%02d/%02d/%04d %02d:%02d", fDia, fMes, fAnio, hHoraFin, hMinutoFin);
+    }
+
+    public String getFechaHoraAsString(Date laFechaHora) {
+        if (laFechaHora != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat(
+                    "dd/MM/yyyy hh:mm:ss a");
+            return sdf.format(laFechaHora);
+        } else {
+            return null;
+        }
     }
 
     // un array para las pruebas que contenga unas cuantas citas
